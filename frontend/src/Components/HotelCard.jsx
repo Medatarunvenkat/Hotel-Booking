@@ -20,7 +20,7 @@ const HotelCard = ({room,index}) => {
         </div>
         <div>
             <p><span>${room.pricepernight}</span>/night</p>
-            <button>Book Now</button>
+            <button className='px-4 py-2 text-sm font-medium border border-gray-300 rounded hover:bg-gray-50 transition-all cursor-pointer'>Book Now</button>
         </div>
       </div>
       </Link>
