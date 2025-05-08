@@ -1,10 +1,12 @@
 import React from 'react'
 import Navbar from './Components/Navbar'
-
+import {useLocation} from "react-router-dom"
 const App = () => {
+
+    const isownerpath=useLocation().pathname.includes("owner")
   return (
     <div>
-      <Navbar/>
+      {!isownerpath && <Navbar/>}
     </div>
   )
 }

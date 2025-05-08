@@ -1,5 +1,6 @@
 import React from "react";
-
+import {assets} from "../assets/assets"
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
     const navLinks = [
@@ -9,28 +10,24 @@ const Navbar = () => {
         { name: 'About', path: '/' },
     ];
 
-    const ref = React.useRef(null)
-
     const [isScrolled, setIsScrolled] = React.useState(false);
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
     React.useEffect(() => {
         const handleScroll = () => {
-            setIsScrolled(ref.current.scrollTop > 10);
+            setIsScrolled(window.scrollY> 10);
         };
-        ref.current.addEventListener("scroll", handleScroll);
+        window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
     return (
-        <div ref={ref} className="h-88 md:h-64 overflow-y-scroll">
-            <p className="w-10 h-[500px]"></p>
             <nav className={`fixed top-0 left-0 bg-indigo-500 w-full flex items-center justify-between px-4 md:px-16 lg:px-24 xl:px-32 transition-all duration-500 z-50 ${isScrolled ? "bg-white/80 shadow-md text-gray-700 backdrop-blur-lg py-3 md:py-4" : "py-4 md:py-6"}`}>
 
                 {/* Logo */}
-                <a href="/" className="flex items-center gap-2">
-                    <img src={"https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/dummyLogo/dummyLogoWhite.svg"} alt="logo" className={`h-9 ${isScrolled && "invert opacity-80"}`} />
-                </a>
+                <Link to='/'>
+                    <img src={assets.logo} alt="logo" className={`h-9 ${isScrolled && "invert opacity-80"}`} />
+                </Link>
 
                 {/* Desktop Nav */}
                 <div className="hidden md:flex items-center gap-4 lg:gap-8">
@@ -89,7 +86,6 @@ const Navbar = () => {
                     </button>
                 </div>
             </nav>
-        </div>
     );
 }
 export default Navbar
