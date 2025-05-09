@@ -78,6 +78,15 @@ const Allrooms = () => {
           </div>
         ))}
       </div>
+      <div className='bg-white w-80 border border-gray-300 text-gray-600 max-lg:mb-8 min-lg:mt-16'>
+          <div>
+            <p className='text-base font-medium text-gray-800'>FILTERS</p>
+            <div className='text-xs cursor-pointer'>
+              <span className='lg:hidden'>HIDE</span>
+              <span className='hidden lg:block'>Clear</span>
+            </div>
+          </div>
+      </div>
     </div>
   );
 };
