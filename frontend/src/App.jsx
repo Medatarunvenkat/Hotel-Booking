@@ -4,6 +4,7 @@ import { Route, Routes, useLocation } from "react-router-dom";
 import Home from "./Pages/Home";
 import Footer from "./Components/Footer";
 import Allrooms from "./Pages/Allrooms";
+import RoomDetails from "./Pages/RoomDetails";
 
 const App = () => {
   const isownerpath = useLocation().pathname.includes("owner");
@@ -15,6 +16,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/rooms" element={<Allrooms />} />
+          <Route path="/rooms/:id" element={<RoomDetails/>} />
         </Routes>
       </div>
       <Footer/>
