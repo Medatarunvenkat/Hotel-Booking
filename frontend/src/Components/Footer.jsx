@@ -7,7 +7,7 @@ const Footer = () => {
                 <div className='max-w-80'>
                     <img src={assets.hotel} alt="logo" className='mb-4 h-8 md:h-9' />
                     <p className='text-sm'>
-                        Discover the world's most extraordinary places
+                        Discover the world's most extraordinary places to stay, from boutique hotels to luxury villas and private islands.
                     </p>
                     <div className='flex items-center gap-3 mt-4'>
                         {/* Instagram */}
