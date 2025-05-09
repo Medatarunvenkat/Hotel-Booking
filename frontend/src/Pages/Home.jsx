@@ -4,6 +4,7 @@ import FeaturedDestination from "../Components/FeaturedDestination";
 import Exclusiveoffers from "../Components/Exclusiveoffers";
 import Testimonial from "../Components/Testimonial";
 import Newsletter from "../Components/Newsletter";
+import Footer from "../Components/Footer";
 const Home = () => {
   return (
     <div>
@@ -12,6 +13,7 @@ const Home = () => {
       <Exclusiveoffers/>
       <Testimonial/>
       <Newsletter/>
+      <Footer/>
     </div>
   );
 };
