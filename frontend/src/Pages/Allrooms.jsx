@@ -1,9 +1,34 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { assets, facilityIcons, roomsDummyData } from "../assets/assets"
 import { useNavigate } from 'react-router-dom'
 
+const checkbox=({label,selected=false,onChange=()=>{}})=>{
+  return(
+      <label className='flex gap-3 items-center cursor-pointer mt-2 text-sm '><input type="checkbox" checked={selected} onChange={(e)=>onChange(e.target.checked,label)}/>
+      <span className='font-light select-none'>{label}</span>
+      </label>
+  )
+}
+
+
+
+
+
+
+
 const Allrooms = () => {
   const navigate = useNavigate();
+  const [openfilters,setopenfilters]=useState(false)
+  const roomtypes=[
+    "Single Bed","Double Bed","Luxury Room","Family Suite",
+  ];
+  const priceranges=[
+    '10000-20000','20000-30000','30000-40000','40000-50000'
+  ];
+  const sortoptions=[
+    "Price Low to High","Price High to Low","Newest First"
+  ];
+
 
   return (
     <div className='pt-24 px-4 md:px-10 lg:px-16'>
@@ -79,12 +104,17 @@ const Allrooms = () => {
         ))}
       </div>
       <div className='bg-white w-80 border border-gray-300 text-gray-600 max-lg:mb-8 min-lg:mt-16'>
-          <div>
+          <div className={`flex items-center justify-between px-5 py-2.5 min-lg:border-b border-gray-300 ${openfilters && "border-b"}`}>
             <p className='text-base font-medium text-gray-800'>FILTERS</p>
             <div className='text-xs cursor-pointer'>
-              <span className='lg:hidden'>HIDE</span>
+              <span className='lg:hidden' onClick={()=>setopenfilters(!openfilters)}>{openfilters?'HIDE':'SHOW'}HIDE</span>
               <span className='hidden lg:block'>Clear</span>
             </div>
+          </div>
+          <div className={`${openfilters?'h-auto':'h-0 lg:h-auto'} overflow-hidden transition-all duration-700 `}>
+              <div className='px-5 pt-5'>
+                  <p className='font-medium text-gray-800 pb-2'>Popular Filters</p>
+              </div>
           </div>
       </div>
     </div>
