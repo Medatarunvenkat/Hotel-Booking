@@ -13,9 +13,15 @@ const Allrooms = () => {
      {roomsDummyData.map((room)=>{
         <div>
             <img onClick={()=>Navigate(`/rooms/${room._id}`)} src={room.images[0]} alt="hotel-img" title='View Room Details' className='max-h-65 md:w-1/2 rounded-xl shadow-lg object-cover cursor-pointer'/>
-            <div>
-                <p>{room.hotel.city}</p>
-                <p>{room.hotel.name}</p>
+            <div className='md:w-1/2 flex flex-col gap-2'>
+                <p className='text-gray-500'>{room.hotel.city}</p>
+                <p className=''>{room.hotel.name}</p>
+                <div className='flex items-center'>
+                <p className='text-yellow-500 text-lg'>★★★★★</p>
+                    <p className='ml-2'>
+                        200+ reviews
+                    </p>
+                </div>
             </div>
         </div>
      })}
