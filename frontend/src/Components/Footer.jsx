@@ -5,9 +5,11 @@ const Footer = () => {
     <div className=' bg-[#F6F9FC] text-gray-500/80 pt-8 px-6 md:px-16 lg:px-24 xl:px-32'>
             <div className='flex flex-wrap justify-between gap-12 md:gap-6'>
                 <div className='max-w-80'>
-                    <img src={assets.hotel} alt="logo" className='mb-4 h-8 md:h-9' />
+                <div className="flex items-center gap-2">
+                    <img src={assets.hotel} alt="logo" className="h-8 md:h-9" />
                     <span className="font-bold text-xl text-gray-800">Tarun Vitara Grand</span>
-                    <p className='text-sm'>
+                </div>
+                    <p className='text-sm mt-5'>
                         Discover the world's most extraordinary places to stay, from boutique hotels to luxury villas and private islands.
                     </p>
                     <div className='flex items-center gap-3 mt-4'>
