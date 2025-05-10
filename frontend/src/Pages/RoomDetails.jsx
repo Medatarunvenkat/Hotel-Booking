@@ -53,7 +53,8 @@ const RoomDetails = () => {
             <p className='text-2xl font-medium'>${room.pricePerNight}/night</p>
         </div>
 
-        <form className='flex flex-col md:flex-row items-start md:items-center justify-between bg-white shadow-[0px_0px_20px_rgba(0,0,0,0,15) p-6 rounded-xl mx-auto mt-16 max-w-6xl]'>
+        <form className='flex flex-col md:flex-row items-start md:items-center justify-between bg-white shadow-[0px_0px_20px_rgba(0,0,0,0.15)] p-6 rounded-xl mx-auto mt-16 max-w-6xl'>
+
 
         <div className='flex flex-col flex-wrap md:flex-row items-start md:items-center gap-4 md:gap-10 text-gray-500'>
                 <div className='flex flex-col'>
@@ -61,14 +62,18 @@ const RoomDetails = () => {
                     <input type="date" id='checkInDate' placeholder='Check-In' className='w-full rounded border border-gray-300 px-3 py-2 mt-1.5 outline-none' required />
                 </div>
 
+                <div className='w-px h-15 bg-gray-300/70 max-md:hidden'></div>
+
                 <div className='flex flex-col'>
                     <label htmlFor="checkOutDate" className='font-medium'>Check-Out</label>
                     <input type="date" id='checkOutDate' placeholder='Check-Out' className='w-full rounded border border-gray-300 px-3 py-2 mt-1.5 outline-none' required />
                 </div>
 
+                <div className='w-px h-15 bg-gray-300/70 max-md:hidden'></div>
+
                 <div className='flex flex-col'>
                     <label htmlFor="guests" className='font-medium'>Guests</label>
-                    <input type="date" id='guests' placeholder='0' className='max-w-20 rounded border border-gray-300 px-3 py-2 mt-1.5 outline-none' required />
+                    <input type="number" id='guests' placeholder='0' className='max-w-20 rounded border border-gray-300 px-3 py-2 mt-1.5 outline-none' required />
                 </div>
 
 
