@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { assets, roomsDummyData } from '../assets/assets'
+import { assets, facilityIcons, roomsDummyData } from '../assets/assets'
 const RoomDetails = () => {
     const {id}=useParams()
     const[room,setroom]=useState(null)
@@ -38,7 +38,19 @@ const RoomDetails = () => {
                 ))}
             </div>
         </div>
-
+        <div className='flex flex-col md:flex-row md:justify-between mt-10'>
+            <div>
+                <h1 className='text-3xl md:text-4xl'>Experience Luxury Like Never Before</h1>
+                <div>
+                    {room.amenities.map((item,index)=>(
+                        <div key={index} className='flex items-center gap-2 px-3 py-2 rounded-lg bg-gray-100'>
+                            <img src={facilityIcons[item]} alt={item} className='w-5 h-5'/>
+                            <p className='text-xs'>{item}</p>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </div>
 
     </div>
   )
