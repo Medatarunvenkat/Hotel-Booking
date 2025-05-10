@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { assets, facilityIcons, roomsDummyData } from '../assets/assets'
+import { assets, facilityIcons, roomCommonData, roomsDummyData } from '../assets/assets'
 const RoomDetails = () => {
     const {id}=useParams()
     const[room,setroom]=useState(null)
@@ -82,10 +82,21 @@ const RoomDetails = () => {
 
 
         <button className='bg-primary hover:bg-primary-dull active:scale-95 transition-all text-white rounded-md max-md:w-full max-md:mt-6 md:px-25 py-3 md:py-4 text-base cursor-pointer'>
-            Book Now
+            Check Availability
         </button>
-
         </form>
+
+        <div className='mt-25 space-y-4'>
+            {roomCommonData.map((spec,index)=>(
+                <div key={index} className='flex items-start gap-2'>
+                    <img src={spec.icon} alt={`${spec.title}-icon`} className='w-6.5' />
+                    <div>
+                        <p className='text-base'>{spec.title}</p>
+                        <p className='text-gray-500'>{spec.description}</p>
+                    </div>
+                </div>
+            ))}
+        </div>
 
 
     </div>
