@@ -53,7 +53,7 @@ const RoomDetails = () => {
             <p className='text-2xl font-medium'>${room.pricePerNight}/night</p>
         </div>
 
-        <form className='flex flex-co'>
+        <form className='flex flex-col md:flex-row items-start md:items-center justify-between bg-white shadow-[0px_0px_20px_rgba(0,0,0,0,15) p-6 rounded-xl mx-auto mt-16 max-w-6xl]'>
 
         </form>
 
