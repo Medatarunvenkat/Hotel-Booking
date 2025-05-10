@@ -66,6 +66,12 @@ const RoomDetails = () => {
                     <input type="date" id='checkOutDate' placeholder='Check-Out' className='w-full rounded border border-gray-300 px-3 py-2 mt-1.5 outline-none' required />
                 </div>
 
+                <div className='flex flex-col'>
+                    <label htmlFor="guests" className='font-medium'>Guests</label>
+                    <input type="date" id='guests' placeholder='0' className='max-w-20 rounded border border-gray-300 px-3 py-2 mt-1.5 outline-none' required />
+                </div>
+
+
 
         </div>
 
