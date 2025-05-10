@@ -99,6 +99,25 @@ const RoomDetails = () => {
         </div>
 
 
+        <div className='max-w-3xl border-y border-gray-300 my-15 py-10 text-gray-500'>
+        <p>
+        Guests will be allocated on the ground floor according to availability. Room preferences such as view or bed type will be considered but cannot be guaranteed. Early check-in or late check-out requests are subject to room availability and may incur additional charges.
+        </p>
+        </div>
+
+        <div className='flex flex-col items-start gap-4'>
+            <div className='flex gap-4'>
+                <img src={assets.hotel} alt="host" className='h-14 w-14 md:h-18 md:w-18 rounded-full'/>
+                <div>
+                    <p className='text-lg md:text-xl'>Hosted By {room.hotel.name}</p>
+                    <div className='flex items-center mt-1'>
+                        <p className='text-yellow-500'>★★★★★</p>
+                        <p className='ml-2 text-gray-600'>200+ reviews</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
   )
 }
