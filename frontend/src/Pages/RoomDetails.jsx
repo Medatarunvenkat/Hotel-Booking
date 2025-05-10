@@ -1,15 +1,21 @@
-import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
-import { assets, facilityIcons, roomCommonData, roomsDummyData } from '../assets/assets'
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import { assets, facilityIcons, roomCommonData, roomsDummyData } from '../assets/assets';
+
 const RoomDetails = () => {
-    const {id}=useParams()
-    const[room,setroom]=useState(null)
-    const[mainimage,setmainimage]=useState(null)
-    useEffect(()=>{
-        const room=roomsDummyData.find(room=>room._id===id)
-        room && setroom(room)
-        room && setmainimage(room.images[0])
-    },[])
+  const { id } = useParams();
+  const [room, setroom] = useState(null);
+  const [mainimage, setmainimage] = useState(null);
+
+  useEffect(() => {
+    const foundRoom = roomsDummyData.find(room => room._id === id);
+    if (foundRoom) {
+      setroom(foundRoom);
+      setmainimage(foundRoom.images[0]);
+    }
+  }, [id]);
+
+  if (!room) return <div>Loading...</div>;
     return room && (
     <div className='py-28 md:py-35 px-4 md:px-16 lg:px-24 xl:px-32'>
         <div className='flex flex-col md:flex-row items-start md:items-center gap-2'>
@@ -116,6 +122,7 @@ const RoomDetails = () => {
                     </div>
                 </div>
             </div>
+            <button className='px-6 py-2.5 mt-4 rounded text-white bg-primary hover:bg-primary-dull transition-all cursor-pointer'>Contact Now</button>
         </div>
 
     </div>
