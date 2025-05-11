@@ -50,9 +50,11 @@ const Addroom = () => {
                 </select>
             </div>
             <div>
-              
+              <p className='mt-4 text-gray-800'>Price <span className='text-xs'></span></p>
+              <input type="number" placeholder='0' className='border border-gray-300 mt-1 rounded p-2 w-24' value={inputs.pricePerNight} onChange={e=>setinputs({...inputs,pricePerNight:e.target.value})}/>
             </div>
         </div>
+        <p className='text'></p>
     </form>
   )
 }
