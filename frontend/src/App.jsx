@@ -6,6 +6,7 @@ import Footer from "./Components/Footer";
 import Allrooms from "./Pages/Allrooms";
 import RoomDetails from "./Pages/RoomDetails";
 import MyBookings from "./Pages/MyBookings";
+import HotelReg from "./Components/HotelReg";
 
 const App = () => {
   const isownerpath = useLocation().pathname.includes("owner");
@@ -13,6 +14,7 @@ const App = () => {
   return (
     <div>
       {!isownerpath && <Navbar />}
+      <HotelReg/>
       <div className="min-h-[70vh]">
         <Routes>
           <Route path="/" element={<Home />} />
