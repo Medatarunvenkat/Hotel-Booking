@@ -25,6 +25,7 @@ const Dashboard = () => {
               </div>
           </div>
       </div>
+      <h2>Recent Bookings</h2>
     </div>
   )
 }
