@@ -48,9 +48,13 @@ const Dashboard = () => {
                         <td className='py-3 px-4 text-gray-700 border-t border-gray-300 max-sm:hidden'>
                             {item.room.roomType}
                         </td>
-                        
-                        <td className='py-3 px-4 text-gray-700 border-t border-gray-300'>
-                            {item.user.username}
+
+                        <td className='py-3 px-4 text-gray-700 border-t border-gray-300 text-center'>
+                            {item.totalPrice}
+                        </td>
+
+                        <td>
+                          
                         </td>
                     </tr>
                 ))}
