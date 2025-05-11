@@ -31,9 +31,24 @@ const Addroom = () => {
             {Object.keys(images).map((key)=>(
               <label htmlFor={`roomImage${key}`} key={key}>
                   <img className='max h-13 cursor-pointer opacity-80' src={images[key]? URL.createObjectURL(images[key]):assets.uploadArea} alt="" />
-                  <input type="file" accept='image/*' id={`roomImage${key}`} hidden onChange={e=>} />
+                  <input type="file" accept='image/*' id={`roomImage${key}`} hidden onChange={e=>setimages({...images,[key]:e.target.files[0]})} />
               </label>
             ))}
+        </div>
+
+        <div className='w-full flex max-sm:flex-col sm:gap-4 mt-4'>
+            <div className='flex-1 max-w-48'>
+                <p className='text-gray-800 mt-4'>Room Type</p>
+                <select 
+                onChange={e=>setinputs({...inputs,roomType:e.target.value})}
+                className='border opacity-70 border-gray-300 mt-1 rounded p-2 w-full'>
+                    <option value="">Select Room Type</option>
+                    <option value="singlebed">Single Bed</option>
+                    <option value="doublebed">Double Bed</option>
+                    <option value="luxurybed">Luxury Bed</option>
+                    <option value="familysuite">Family Suite</option>
+                </select>
+            </div>
         </div>
     </form>
   )
