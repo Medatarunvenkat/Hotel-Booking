@@ -57,6 +57,7 @@ const Dashboard = () => {
                             <button className={`py-1 px-3 text-xs rounded-full mx-auto ${item.isPaid?'bg-green-200 text-green-600':'bg-amber-300 text-yellow-600'}`}>
                                 {item.isPaid?"Completed":"Pending"}
                             </button>
+                            <button className='ttevbf'></button>
                         </td>
                     </tr>
                 ))}
